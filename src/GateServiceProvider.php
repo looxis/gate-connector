@@ -4,6 +4,7 @@ namespace Looxis\Gate;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Socialite\Contracts\Factory;
+use Laravel\Socialite\Facades\Socialite;
 
 
 class GateServiceProvider extends ServiceProvider
@@ -56,11 +57,15 @@ class GateServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/gate.php', 'gate');
         // Register the main class to use with the facade
 
+        $this->app->bind('gate', function () {
+            return Socialite::driver('gate');
+        });
+
         $this->app->resolving(Factory::class, function ($socialite) {
             $socialite->extend(
                 'gate',
                 function ($app) use ($socialite) {
-                    $config = config_path('gate.php');
+                    $config = config('gate');
                     return $socialite->buildProvider(GateProvider::class, $config);
                 }
             );

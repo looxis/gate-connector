@@ -17,8 +17,28 @@ composer require looxis/gate
 
 ## Usage
 
+
+To register your provider, add it to the array into `config/app.php` file:
+```php
+'providers' => [
+    // Other Service Providers
+
+     \Looxis\Gate\GateServiceProvider::class
+],
+```
+
+
+Add some properties to your `.env` file (see .env.example)
+```php
+GATE_ENABLED=true
+GATE_URL="https://gate.example.com/"
+GATE_CLIENT_ID=3
+GATE_CLIENT_SECRET=client_secret
+```
+
+Also you can publish the config file with this artisan command:
 ``` php
-// Usage description here
+php artisan vendor:publish --tag=gate-config
 ```
 
 ### Testing
