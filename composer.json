@@ -1,0 +1,55 @@
+{
+    "name": "looxis/gate",
+    "description": "",
+    "keywords": [
+        "looxis",
+        "gate"
+    ],
+    "homepage": "https://github.com/looxis/gate",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Igor Tsapiro",
+            "email": "dev@looxis.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.8.*",
+        "laravel/socialite": "^4.3"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Looxis\\Gate\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Looxis\\Gate\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Looxis\\Gate\\GateServiceProvider"
+            ],
+            "aliases": {
+                "Gate": "Looxis\\Gate\\GateFacade"
+            }
+        }
+    }
+}
