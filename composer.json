@@ -13,6 +13,16 @@
             "name": "Igor Tsapiro",
             "email": "dev@looxis.com",
             "role": "Developer"
+        },
+        {
+            "name": "Mike Cholovskiy",
+            "email": "dev@looxis.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Jannik Malken",
+            "email": "dev@looxis.com",
+            "role": "Developer"
         }
     ],
     "require": {
@@ -48,7 +58,7 @@
                 "Looxis\\Gate\\GateServiceProvider"
             ],
             "aliases": {
-                "Gate": "Looxis\\Gate\\GateFacade"
+                "LooxisGate": "Looxis\\Gate\\GateFacade"
             }
         }
     }

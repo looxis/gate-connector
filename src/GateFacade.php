@@ -16,6 +16,6 @@ class GateFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'gate';
+        return 'LooxisGate';
     }
 }

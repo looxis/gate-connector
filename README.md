@@ -18,26 +18,39 @@ composer require looxis/gate
 ## Usage
 
 
-To register your provider, add it to the array into `config/app.php` file:
-```php
-'providers' => [
-    // Other Service Providers
-
-     \Looxis\Gate\GateServiceProvider::class
-],
-```
-
-
 Add some properties to your `.env` file (see .env.example)
-```php
+```dotenv
 GATE_ENABLED=true
 GATE_URL="https://gate.example.com/"
 GATE_CLIENT_ID=3
 GATE_CLIENT_SECRET=client_secret
 ```
 
+Publish and Run migration
+```shell script
+php artisan vendor:publish --tag=gate-migrations
+php artisan migrate
+```
+
+Add `gate_id` and `api_token` to fillable array in User model.
+
+Also you can change auth callback route and controller in config or in `.env` file
+```dotenv
+GATE_AUTH_CALLBACK_URI="auth/callback"
+GATE_AUTH_CALLBACK_CONTROLLER="App\\Http\\Controllers\\Auth\\LoginController"
+```
+
+Change `use AuthenticatesUsers` statement in `App\Http\Controllers\Auth\LoginController` or any other login controller you want to use with Looxis Gate.
+```php
+use AuthenticatesUsers, LoginControllerTrait {
+        LoginControllerTrait::loggedOut insteadof AuthenticatesUsers;
+        LoginControllerTrait::showLoginForm insteadof AuthenticatesUsers;
+    }
+```
+`loggedOut` should be called from `logout` method of this controller (if you override it).
+
 Also you can publish the config file with this artisan command:
-``` php
+```shell script
 php artisan vendor:publish --tag=gate-config
 ```
 
@@ -62,6 +75,7 @@ If you discover any security related issues, please email igortsapiro@gmail.com 
 ## Credits
 
 - [Igor Tsapiro](https://github.com/looxis)
+- [Mike Cholovskiy](https://github.com/meachel)
 - [All Contributors](../../contributors)
 
 ## License
