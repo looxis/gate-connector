@@ -10,17 +10,17 @@
     "type": "library",
     "authors": [
         {
-            "name": "Igor Tsapiro",
-            "email": "dev@looxis.com",
-            "role": "Developer"
-        },
-        {
             "name": "Mike Cholovskiy",
             "email": "dev@looxis.com",
             "role": "Developer"
         },
         {
             "name": "Jannik Malken",
+            "email": "dev@looxis.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Christian Stefener",
             "email": "dev@looxis.com",
             "role": "Developer"
         }
