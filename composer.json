@@ -1,11 +1,11 @@
 {
-    "name": "looxis/gate",
+    "name": "looxis/gate-connector",
     "description": "",
     "keywords": [
         "looxis",
-        "gate"
+        "gate-connector"
     ],
-    "homepage": "https://github.com/looxis/gate",
+    "homepage": "https://github.com/looxis/gate-connector",
     "license": "MIT",
     "type": "library",
     "authors": [
