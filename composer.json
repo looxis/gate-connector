@@ -26,10 +26,10 @@
         }
     ],
     "require": {
-        "php": "^7.1",
+        "php": "^7.3|^8.0",
         "illuminate/http": "^6.0|^7.0|^8.0",
         "illuminate/support": "^6.0|^7.0|^8.0",
-        "laravel/socialite": "^5.0"
+        "laravel/socialite": "^5.2"
     },
     "require-dev": {
         "orchestra/testbench": "6.2.*",
