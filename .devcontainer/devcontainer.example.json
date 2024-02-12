@@ -1,0 +1,23 @@
+{
+  "name": "Laradock",
+  "dockerComposeFile": [
+    "../../laradock/docker-compose.yml"
+  ],
+  "service": "workspace",
+  "workspaceFolder": "/var/www/wecreateyour",
+  "extensions": [
+    "artdiniz.quitcontrol-vscode",
+	  "mikestead.dotenv",
+	  "ryu1kn.partial-diff",
+	  "emallin.phpunit",
+	  "eamodio.gitlens",
+	  "onecentlin.laravel-extension-pack",
+	  "onecentlin.php-productive-pack",
+    "eg2.vscode-npm-script",
+    "vue.volar",
+    "open-southeners.laravel-pint",
+    "github.copilot"
+  ],
+  "remoteUser": "laradock",
+  "shutdownAction": "none"
+}
